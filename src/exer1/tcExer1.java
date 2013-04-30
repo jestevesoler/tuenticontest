@@ -17,6 +17,7 @@ public static void main(String[] args) throws AWTException {
 	String[] v_precios;
 	String v_text = "";
 
+	String v_output = "";
 	
 	for (int j = 0; j < v_casos; j++) {
 				
@@ -24,7 +25,7 @@ public static void main(String[] args) throws AWTException {
 		sc.nextLine();
 		v_text = sc.nextLine();
 		v_precios = v_text.split(" ");
-		System.out.println(howMuchpasta(v_precios, v_budget));
+		v_output = v_output + howMuchpasta(v_precios, v_budget)+((j == 9) ? "" : "\n");
 		
 		if (j == 8) {
 			
@@ -34,6 +35,15 @@ public static void main(String[] args) throws AWTException {
 		}
 		
 	}	
+	
+	v_precios = v_output.split("\n");
+	
+	for (int i = 0; i < v_precios.length; i++) {
+	   
+		System.out.println(v_precios[i]);
+		
+	}
+	
 	
 }
 
